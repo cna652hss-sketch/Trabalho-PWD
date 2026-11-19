@@ -1,0 +1,47 @@
+. HTML – Estrutura
+
+<h1>Minha Lista</h1>
+<input id="nova-tarefa">
+<button>Adicionar</button>
+<nav>
+<button>Todas</button>
+<button>Pendentes</button>
+<button>Concluídas</button>
+</nav>
+<ul id="lista-tarefas"></ul>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+2. CSS – Aparência
+
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+}
+h1 { text-align: center; }
+button { padding: 10px; }
+li { padding: 12px; }
+.concluid {
+  text-decoration: line-through;
+}
+
+3. JavaScript – Funcionamento
+
+let tarefas = [];
+
+function adicionar(nome) {
+  tarefas.push({nome, concluida: false});
+}
+
+function concluir(i) {
+  tarefas[i].concluida = true;
+}
+
+function excluir(i) {
+  tarefas.splice(i, 1);
+}
+
+function salvar() {
+  localStorage.setItem("tarefas",
+  JSON.stringify(tarefas));
+}
